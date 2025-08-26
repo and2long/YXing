@@ -26,6 +26,7 @@ import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.Preview
 import androidx.camera.core.SurfaceOrientedMeteringPointFactory
 import androidx.camera.lifecycle.ProcessCameraProvider
+import androidx.camera.view.PreviewView
 import androidx.core.content.ContextCompat
 import com.example.yxing.R
 import com.google.zxing.BarcodeFormat
@@ -38,7 +39,6 @@ import com.yxing.view.ScanCustomizeView
 import com.yxing.view.ScanQqView
 import com.yxing.view.ScanWechatView
 import com.yxing.view.base.BaseScanView
-import kotlinx.android.synthetic.main.activity_scancode.pvCamera
 import java.lang.Math.abs
 import java.lang.Math.max
 import java.lang.Math.min
@@ -73,6 +73,8 @@ open class ScanCodeActivity : BaseScanActivity(), OnScancodeListener {
 
     private var mAnimeSetList: MutableList<AnimatorSet> = mutableListOf()
 
+    private lateinit var pvCamera: PreviewView
+
     override fun getLayoutId(): Int = R.layout.activity_scancode
 
     override fun initData() {
@@ -87,6 +89,7 @@ open class ScanCodeActivity : BaseScanActivity(), OnScancodeListener {
             baseScanView?.scanRect,
             this
         )
+        pvCamera = findViewById<PreviewView>(R.id.pvCamera)
         // surface准备监听
         pvCamera.post {
             //设置需要实现的用例（预览，拍照，图片数据解析等等）

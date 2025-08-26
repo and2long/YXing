@@ -268,7 +268,7 @@ public class MainActivity extends AppCompatActivity {
                                     //扫码成功是否播放音效  true ： 播放   false ： 不播放
                                     .setPlayAudio(true)
                                     //设置音效音频
-                                    .setAudioId(R.raw.beep)
+                                    .setAudioId(com.example.yxing.R.raw.beep)
                                     ////////////////////////////////////////////
                                     //以下配置 在style为 ScanStyle.CUSTOMIZE 时生效
                                     //设置扫码框位置  left ： 边框左边位置   top ： 边框上边位置   right ： 边框右边位置   bottom ： 边框下边位置   单位/dp
@@ -290,7 +290,7 @@ public class MainActivity extends AppCompatActivity {
                                     //设置是否显示边框外部阴影 true ： 显示  false ： 不显示
                                     .setShowShadow(true)
                                     //设置边框外部阴影颜色
-                                    .setShadeColor(R.color.black_tran30)
+                                    .setShadeColor(com.example.yxing.R.color.black_tran30)
                                     //设置扫码条运动方式   ScanMode.REVERSE : 往复运动   ScanMode.RESTART ：重复运动    默认ScanMode.RESTART
                                     .setScanMode(ScanMode.REVERSE)
                                     //设置扫码条扫一次时间  单位/ms  默认3000
